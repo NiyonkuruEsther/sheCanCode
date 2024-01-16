@@ -182,6 +182,7 @@ form {
 input {
     border: none;
     outline: none;
+    width: 100%;
 }
 
 .input-container {
@@ -190,8 +191,9 @@ input {
     padding: 10px;
 }
 
-.input-container {
-    border: 1px solid black;
+
+.input-container:focus-within {
+    border: 2px solid black;
 }
 
 .btn-secondary {
