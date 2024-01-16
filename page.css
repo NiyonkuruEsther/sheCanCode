@@ -199,7 +199,7 @@ input {
 
 .btn-secondary {
     width: fit-content;
-    padding: 10px 50px;
+    padding: 10px 20px;
     background: black;
     color: white;
 }
@@ -237,18 +237,30 @@ input {
         overflow-x: hidden;
     }
 
-    .header-image {
-        height: 20%;
+    .hero-section {
+        max-width: 85vw;
+    }
+
+    .header-hero {
+        height: 35vh;
         object-fit: scale-down;
         object-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-text {
+        padding-top: 10vh;
+    }
+
+    .header-text-part {
+        display: none;
     }
 
     .nav-right {
         visibility: hidden;
-    }
-
-    .hero-section {
-        max-width: 85vw;
     }
 
     .houses {
