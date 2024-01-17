@@ -1,18 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CountriesContext } from "./../../pages/Main";
 
 const Paginate = () => {
-  const [paginate, setPaginate] = useState({
-    numberPerpage: 10,
-    showDropDown: false
-  });
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  const { setCountries } = useContext(CountriesContext);
 
   return (
-    <div
-      onClick={() =>
-        setPaginate({ ...paginate, showDropDown: !paginate.showDropDown })
-      }
-    >
+    <div onClick={() => setShowDropDown(!showDropDown)}>
       <div className="flex gap-3 relative select-none">
         <h1 className="text-xl">Paginate</h1>
         <svg
@@ -28,15 +24,20 @@ const Paginate = () => {
             className="color000000 svgShape"
           ></path>
         </svg>
-        {paginate.showDropDown && (
+        {showDropDown && (
           <div className="select-none absolute top-16 text-sm bg-white text-gray-950 rounded-lg shadow-md p-4">
             <h3 className="text-nowrap">Nbr per page</h3>
             <hr className="my-2" />
             <div className="cursor-pointer space-y-2 text-nowrap">
-              {[20, 50, 100].map((number, index) => (
+              {[10, 20, 50, 100].map((number, index) => (
                 <p
                   onClick={() =>
-                    setPaginate({ ...paginate, numberPerpage: number })
+                    setCountries((prevState) => {
+                      return {
+                        ...prevState,
+                        countriesPerPage: number
+                      };
+                    })
                   }
                   key={index}
                 >

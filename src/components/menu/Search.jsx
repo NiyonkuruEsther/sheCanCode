@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { CountriesContext } from "../../pages/Main";
+
 const Search = () => {
+  const { setCountries } = useContext(CountriesContext);
   return (
     <div>
       <label
@@ -9,6 +13,14 @@ const Search = () => {
           id="search-bar"
           placeholder="Your keyword here"
           className="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white"
+          onChange={(e) => {
+            setCountries((current) => {
+              return {
+                ...current,
+                searchKeyWord: e.target.value
+              };
+            });
+          }}
         />
         <button className="w-full md:w-auto px-6 py-3 bg-gray-950 border-gray-950 text-white fill-white active:scale-95 duration-100 border will-change-transform overflow-hidden relative rounded-xl transition-all disabled:opacity-70">
           <div className="relative">
