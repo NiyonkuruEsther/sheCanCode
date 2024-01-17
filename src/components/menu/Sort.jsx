@@ -1,7 +1,9 @@
 const Sort = () => {
   return (
-    <div>Sort</div>
-  )
-}
+    <div>
+      <h1 className="text-xl">Sort </h1>
+    </div>
+  );
+};
 
-export default Sort
+export default Sort;

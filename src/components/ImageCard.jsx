@@ -4,7 +4,7 @@ const ImageCard = ({ flags, countryName }) => {
   return (
     <div className="w-full relative group">
       <img
-        className="object-cover min-h-32 max-h-32 w-full object-center hover:brightness-[.2] after:content-[attr(before)]"
+        className="object-cover min-h-32 max-h-32 w-full object-center group-hover:brightness-[.2] after:content-[attr(before)]"
         src={flags.png}
         alt={flags.alt}
       />

@@ -25,13 +25,34 @@ const Filter = () => {
             <h3 className="text-nowrap">By continent</h3>
             <hr className="my-2" />
             <div className="cursor-pointer space-y-2 text-nowrap">
-              <p>Africa</p>
-              <p>North America</p>
-              <p>South America</p>
-              <p>Asia</p>
-              <p>Europe</p>
-              <p>Oceania</p>
-              <p>Antarctica</p>
+              <p className="flex items-center gap-2">
+                <input type="checkbox" name="" id="" />
+                Africa
+              </p>
+              <p className="flex items-center gap-2">
+                <input type="checkbox" name="" id="" />
+                North America
+              </p>
+              <p className="flex items-center gap-2">
+                <input type="checkbox" name="" id="" />
+                South America
+              </p>
+              <p className="flex items-center gap-2">
+                <input type="checkbox" name="" id="" />
+                Asia
+              </p>
+              <p className="flex items-center gap-2">
+                <input type="checkbox" name="" id="" />
+                Europe
+              </p>
+              <p className="flex items-center gap-2">
+                <input type="checkbox" name="" id="" />
+                Oceania
+              </p>
+              <p className="flex items-center gap-2">
+                <input type="checkbox" name="" id="" />
+                Antarctica
+              </p>
             </div>
           </div>
         )}
