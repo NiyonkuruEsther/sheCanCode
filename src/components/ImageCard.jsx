@@ -8,7 +8,7 @@ const ImageCard = ({ flags, countryName }) => {
         src={flags.png}
         alt={flags.alt}
       />
-      <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex justify-center items-end text-sm bg-gray-200 text-black font-semibold">
+      <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex justify-center items-end text-sm bg-gray-200 text-black font-semibold px-1">
         {countryName}
       </div>
     </div>

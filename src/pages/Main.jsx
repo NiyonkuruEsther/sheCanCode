@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import axios from "axios";
 import CountryCard from "../components/CountryCard";
+import Menu from "../components/menu";
 
 const Main = () => {
   const [countries, setCountries] = useState([]);
@@ -22,13 +23,23 @@ const Main = () => {
 
   return (
     <Layout>
+      <div>
+        <Menu />
+      </div>
       <div className="p-6 mb-12 flex flex-col gap-4 text-center items-center">
-        <h1 className="text-3xl font-bold m-0">Explore all countries</h1>
-        <p className="text-lg text-gray-300 w-3/6">
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, cupiditate fuga possimus at iure iste impedit odio totam repudiandae. Omnis inventore itaque facilis ipsa. Expedita recusandae maiores iusto consequatur nam?
+        <div>
+          <h1 className="text-3xl font-bold m-0">Explore all countries</h1>
+          <hr className="mt-3 " />
+        </div>
+
+        <p className="text-lg text-gray-300 w-4/6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
+          cupiditate fuga possimus at iure iste impedit odio totam repudiandae.
+          Omnis inventore itaque facilis ipsa. Expedita recusandae maiores iusto
+          consequatur nam?
         </p>
       </div>
-      <div className="grid grid-cols-6 justify-items-center gap-12">
+      <div className="grid grid-cols-8 justify-items-center gap-8">
         {countries.map((country, index) => (
           <CountryCard key={index} country={country} />
         ))}
