@@ -23,7 +23,7 @@ const Main = () => {
 
   return (
     <Layout>
-      <div>
+      <div className="w-full mb-32 ">
         <Menu />
       </div>
       <div className="p-6 mb-12 flex flex-col gap-4 text-center items-center">
