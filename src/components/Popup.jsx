@@ -1,8 +1,18 @@
+import PropTypes from "prop-types";
 
-const Popup = () => {
-  return (
-    <div>Popup</div>
-  )
-}
+const Popup = ({ countriesDetails }) => {
+  return <div className="rounded-lg bg-white shadow-md">
+    <h1>
+      
+    </h1>
+    <p>
 
-export default Popup
+    </p>
+  </div>;
+};
+
+Popup.propTypes = {
+  countriesDetails: PropTypes.array
+};
+
+export default Popup;

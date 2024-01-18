@@ -80,7 +80,6 @@ const Main = () => {
           {countries.countriesList
             .filter((country) => {
               if (countries.filterBy.length > 0) {
-                // console.log(countries.filterBy);
                 return countries.filterBy.some(
                   (continent) => continent === country.continents[0]
                 );
