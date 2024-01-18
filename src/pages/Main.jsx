@@ -21,7 +21,7 @@ const Main = () => {
     countriesList: [],
     countriesPerPage: 10,
     searchKeyWord: "",
-    filterBy: ""
+    filterBy: []
   });
 
   const contextValue = {
@@ -41,6 +41,7 @@ const Main = () => {
           ...current,
           countriesList: response.data
         }));
+        console.log(response.data);
       } catch (error) {
         console.error("Error fetching countries:", error);
       }
@@ -77,7 +78,17 @@ const Main = () => {
           className={` grid justify-items-center gap-8 ${gridCountriesList}`}
         >
           {countries.countriesList
-            .slice(0, countries.countriesPerPage)
+            .filter((country) => {
+              if (countries.filterBy.length > 0) {
+                // console.log(countries.filterBy);
+                return countries.filterBy.some(
+                  (continent) => continent === country.continents[0]
+                );
+              } else {
+                return true;
+              }
+            })
+            .slice(0, countries.countriesPerPage | 250)
             .map((country, index) => (
               <CountryCard key={index} country={country} />
             ))}
