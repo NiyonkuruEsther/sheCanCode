@@ -88,20 +88,20 @@ const Main = () => {
                   return true;
                 }
               })
-              .slice(
-                0,
-                countries.countriesList.filter((country) => {
-                  if (countries.filterBy.length > 0) {
-                    return countries.filterBy.some(
-                      (continent) => continent === country.continents[0]
-                    );
-                  } else {
-                    return true;
-                  }
-                }).length > 250
-                  ? 250
-                  : countries.countriesList.length
-              )
+              // .slice(
+              //   0,
+              //   countries.countriesList.filter((country) => {
+              //     if (countries.filterBy.length > 0) {
+              //       return countries.filterBy.some(
+              //         (continent) => continent === country.continents[0]
+              //       );
+              //     } else {
+              //       return true;
+              //     }
+              //   }).length > 250
+              //     ? 250
+              //     : countries.countriesList.length
+              // )
             .slice(0, countries.countriesPerPage)
             .map((country, index) => (
               <CountryCard key={index} country={country} />
