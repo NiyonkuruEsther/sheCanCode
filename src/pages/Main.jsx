@@ -102,10 +102,10 @@ const Main = () => {
                   ? 250
                   : countries.countriesList.length
               )
-            // .slice(0, countries.countriesPerPage)
-            // .map((country, index) => (
-            //   <CountryCard key={index} country={country} />
-            // ))
+            .slice(0, countries.countriesPerPage)
+            .map((country, index) => (
+              <CountryCard key={index} country={country} />
+            ))
           }
         </div>
         <div></div>
