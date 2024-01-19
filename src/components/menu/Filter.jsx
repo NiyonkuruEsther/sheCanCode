@@ -43,14 +43,18 @@ const Filter = () => {
                   onClick={(e) => {
                     e.stopPropagation();
                     setCountries((current) => {
+                      let updatedFilterBy;
+                      if (current.filterBy.includes(countryName)) {
+                        updatedFilterBy = current.filterBy.filter(
+                          (item) => item !== countryName
+                        );
+                      } else {
+                        updatedFilterBy = [...current.filterBy, countryName];
+                      }
                       return {
                         ...current,
-                        filterBy: [
-                          ...current.filterBy,
-                          current.filterBy.includes(countryName)
-                            ? null
-                            : countryName
-                        ]
+                        filterBy: updatedFilterBy
+                        // countriesPerPage: 10
                       };
                     });
                   }}
