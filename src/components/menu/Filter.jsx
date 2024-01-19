@@ -53,8 +53,8 @@ const Filter = () => {
                       }
                       return {
                         ...current,
-                        filterBy: updatedFilterBy
-                        // countriesPerPage: 10
+                        filterBy: updatedFilterBy,
+                        countriesPerPage: 10
                       };
                     });
                   }}
