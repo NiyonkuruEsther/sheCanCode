@@ -1,18 +1,51 @@
 * {
-    max-width: 1400px;
+    margin: 0;
+    font-family: 'Karma', serif;
+}
+
+.main {
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    font-family: 'Karma', serif;
+    position: relative;
 }
 
 h2 {
     font-weight: normal;
 }
 
+p {
+    font-size: 15px;
+    line-height: 22.5px;
+}
+
 .nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin-bottom: 56px;
+    background: white;
+    width: 100vw;
+
+}
+
+.nav-menu {
+    padding: 5px;
+}
+
+.nav-menu:hover {
+    background: #cccccc;
+}
+
+.nav-items {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gallery-section {
@@ -20,12 +53,87 @@ h2 {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
-    row-gap: 47px;
+    gap: 20px;
+    padding-top: 56px;
+    margin-top: 56px;
+    margin-bottom: 47px;
 }
 
 .gallery-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gallery-card img {
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
+}
+
+.gallery-card h2 {
+    padding: 0 10px 0 10px;
+    line-height: 36px;
+}
+
+.gallery-card p {
+    padding: 0 5px 0 5px;
+}
+
+.gallery-section-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.gallery-section-toggle p:hover {
+    color: white;
+    background-color: black;
+}
+
+.gallery-section-toggle p {
+    width: fit-content;
+    padding: 8px 16px;
+
+}
+
+hr {
+    margin-bottom: 62px;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 99px;
+}
+
+.about-section img {
+    width: min-content;
+    margin-bottom: 9px;
+}
+
+.about-section-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 32px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 94px;
+    column-gap: 16px;
+    padding: 0 8px;
+}
+
+.footer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
