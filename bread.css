@@ -8,6 +8,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    padding: 0 30px;
 }
 
 h2 {
@@ -141,4 +142,17 @@ hr {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+
+@media (max-width: 900px) {
+
+    .gallery-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-section img {
+        height: fit-content;
+    }
 }
