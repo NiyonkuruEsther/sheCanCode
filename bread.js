@@ -13,8 +13,8 @@ var galleryData = [
 
 document.getElementById('menu').innerHTML = galleryData.map(image => 
     `<div class="gallery-card">
-      <img class="gallery-card-img" src=${image.src} alt="">
+      <img src=${image.src} alt="">
       <h2>${image.heading}</h2>
-      <p class="gallery-card-text" >Avatar: ${image.paragraph}</p>
+      <p>${image.paragraph}</p>
     </div>`
 ).join('')
