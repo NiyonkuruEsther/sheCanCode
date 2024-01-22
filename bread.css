@@ -40,6 +40,57 @@ p {
     justify-content: center;
 }
 
+
+.nav-menu div {
+    position: absolute;
+    height: 100vh;
+    width: 22vw;
+    left: 0;
+    top: 0;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.nav-menu-toggle-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.nav-menu-toggle-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu-toggle-list h1 {
+    padding: 10px 40px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.nav-menu-toggle-list h1:hover {
+    background: #cccccc
+}
+
+.nav-menu-toggle-list.active {
+    transform: translateX(0);
+
+}
+
+.nav-menu-toggle-list.active::before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .nav-menu:hover {
     background: #cccccc;
 }
@@ -102,11 +153,16 @@ p {
 .gallery-section-toggle p {
     width: fit-content;
     padding: 8px 16px;
+}
 
+.gallery-section-toggle-active {
+    background: #000;
+    color: white;
 }
 
 hr {
     margin-bottom: 62px;
+    color: #cccccc;
 }
 
 .about-section {
@@ -144,8 +200,63 @@ hr {
     gap: 15px;
 }
 
+.blog-post-cards {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.blog-post-card {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+}
+
+.blog-post-card:hover {
+    background-color: #cccccc;
+}
+
+.blog-post-cards hr {
+    margin: 0 !important;
+}
+
+.blog-post-card img {
+    width: 50px;
+}
+
+.footer-tags {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-tags div {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+.footer-tags p {
+    background: #616161;
+    font-size: 12px;
+    padding: 2px 10px;
+    height: min-content;
+    line-height: 18px !important;
+}
+
+.focus {
+    font-size: 15px !important;
+    padding: 2px 10px !important;
+    background: #000 !important;
+}
 
 @media (max-width: 900px) {
+
+    .nav-menu div {
+        width: 80vw;
+    }
 
     .gallery-section {
         display: flex;
@@ -153,6 +264,17 @@ hr {
     }
 
     .about-section img {
-        height: fit-content;
+        height: 25vh;
+        width: 80vw;
+    }
+
+    .about-section-details {
+        padding: 0;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }

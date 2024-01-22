@@ -18,3 +18,16 @@ document.getElementById('menu').innerHTML = galleryData.map(image =>
       <p>${image.paragraph}</p>
     </div>`
 ).join('')
+
+
+const toggle = document.querySelector('.nav-menu-toggle');
+const close = document.querySelector('.nav-menu-toggle-close');
+const list = document.querySelector('.nav-menu-toggle-list');
+
+toggle.addEventListener('click', function() {
+    list.classList.add('active');
+});
+
+close.addEventListener('click', function() {
+    list.classList.remove('active');
+});
