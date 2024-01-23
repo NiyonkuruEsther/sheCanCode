@@ -8,7 +8,6 @@ const Menu = () => {
       <Search />
       <div className="flex gap-12">
         <Filter />
-        {/* <Sort /> */}
         <Paginate />
       </div>
     </div>
