@@ -3,24 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./bread.css" rel="stylesheet" />
+    <link href="../styles/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
-    <script src="./bread.js" defer></script>
+    <title>Food clone</title>
+    <script src="../js/bread.js" defer></script>
   </head>
   <body>
-    <div class="main">
+    <div class="max-w-[1200px] sm:px-8 mx-auto relative py-[30px]">
       <!-- Navbar -->
-      <div class="nav">
-        <div class="nav-items">
-          <div class="nav-menu">
+      <div class="fixed inset-x-0 top-0 mb-14 bg-white w-screen cursor-pointer">
+        <div class="flex justify-between max-w-[1200px] mx-auto items-center">
+          <div
+            class="p-[5px] h-16 w-14 flex items-center justify-center hover:bg-[#cccccc]"
+          >
             <h2 class="nav-menu-toggle">☰</h2>
-            <div class="nav-menu-toggle-list">
+            <div
+              class="nav-menu-toggle-list absolute h-screen w-[22vw] sm:w-[70vw] left-0 top-0 shadow-lg bg-white -translate-x-[200%] transition-transform delay-300 ease-in before:conent-[''] before:inset-x-0 before:h-full before:bg-[#f4f4f4] before:transition-colors before:delay-300 before:ease-in"
+            >
               <h1 class="nav-menu-toggle-close">Close Menu</h1>
               <h1>Food</h1>
               <h1>About</h1>
@@ -33,10 +37,13 @@
 
       <!-- Gallery section -->
       <div>
-        <div class="gallery-section" id="menu"></div>
-        <div class="gallery-section-toggle">
+        <div
+          class="w-full grid grid-cols-4 grid-rows-2 gap-5 pt-12 sm:pt-8 mt-14 mb-12 sm:grid-cols-1"
+          id="menu"
+        ></div>
+        <div class="flex justify-center mb-[60px] gallery-section-toggle">
           <p>«</p>
-          <p class="gallery-section-toggle-active">1</p>
+          <p class="text-white bg-black">1</p>
           <p>2</p>
           <p>3</p>
           <p>4</p>
@@ -47,10 +54,14 @@
       </div>
 
       <!-- About section -->
-      <div class="about-section">
+      <div class="flex flex-col items-center text-center gap-8 pb-24">
         <h2>About Me, The Food man</h2>
-        <img src="https://www.w3schools.com/w3images/chef.jpg" alt="" />
-        <div class="about-section-details">
+        <img
+          src="https://www.w3schools.com/w3images/chef.jpg"
+          alt=""
+          class="w-min mb-2"
+        />
+        <div class="flex flex-col gap-4 py-3">
           <h3>I am Who I Am!</h3>
           <p><i>With Passion For Real, Good Food</i></p>
           <p>
@@ -68,8 +79,8 @@
       <hr />
 
       <!-- footer -->
-      <div class="footer">
-        <div class="footer-details">
+      <div class="grid grid-cols-3 mt-20 gap-4 py-2 sm:grid-cols-1">
+        <div class="flex flex-col gap-4">
           <h2>FOOTER</h2>
           <p>
             Praesent tincidunt sed tellus ut rutrum. Sed vitae justo
@@ -78,22 +89,27 @@
           </p>
           <p>Powered by <u>w3.css</u></p>
         </div>
-        <div class="footer-blog">
+        <div>
           <h2>BLOG POSTS</h2>
-          <div class="blog-post-cards">
-            <div class="blog-post-card">
+          <div class="flex flex-col pt-2">
+            <div class="flex p-4 gap-5 hover:bg-[#cccccc]">
               <img
                 src="https://www.w3schools.com/w3images/workshop.jpg"
                 alt=""
+                class="w-[3.125rem]"
               />
               <div>
                 <h3>Lorem</h3>
                 <p>Sed mattis nunc</p>
               </div>
             </div>
-            <hr />
-            <div class="blog-post-card">
-              <img src="https://www.w3schools.com/w3images/gondol.jpg" alt="" />
+            <hr class="!m-0" />
+            <div class="flex p-4 gap-5 hover:bg-[#cccccc]">
+              <img
+                src="https://www.w3schools.com/w3images/gondol.jpg"
+                alt=""
+                class="w-[3.125rem]"
+              />
               <div>
                 <h3>Ipsum</h3>
                 <p>Praes tinci sed</p>
@@ -101,10 +117,10 @@
             </div>
           </div>
         </div>
-        <div class="footer-tags">
+        <div class="footer-tags flex flex-col gap-4">
           <h2>POPULAR TAGS</h2>
-          <div>
-            <p class="focus">Travel</p>
+          <div class="flex flex-wrap gap-1 text-white">
+            <p class="!text-white !bg-black px-2 py-1">Travel</p>
             <p>Newyork</p>
             <p>Dinner</p>
             <p>Salmon</p>

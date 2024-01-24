@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Karma', serif;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: x-large;
+}
+
+p {
+    font-size: 15px;
+    line-height: 22.5px;
+}
+
+.nav-menu-toggle-list.active {
+    transform: translateX(0);
+
+}
+
+.nav-menu-toggle-list.active::before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-menu-toggle-list h1 {
+    padding: 10px 40px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.nav-menu-toggle-list h1:hover {
+    background: #cccccc
+}
+
+.gallery-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gallery-card img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.gallery-card h2 {
+    padding: 0 10px 0 10px;
+    line-height: 36px;
+}
+
+.gallery-card p {
+    padding: 0 5px 0 5px;
+}
+
+
+.gallery-section-toggle p:hover {
+    color: #ffffff;
+    background-color: black;
+}
+
+.gallery-section-toggle p {
+    width: fit-content;
+    padding: 8px 16px;
+}
+
+hr {
+    margin-bottom: 62px;
+    color: #cccccc;
+}
+
+.footer-tags p {
+    background: #616161;
+    font-size: 12px;
+    padding: 2px 10px;
+    height: min-content;
+    line-height: 18px !important;
+}
