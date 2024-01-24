@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View } from "react-native";
+// import tw from 'tailwind-react-native-classnames'
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView className="flex flex-1  bg-black">
+      <View>
+        <Image
+          source={{
+            uri: "https://reactnative.dev/docs/assets/p_cat2.png"
+          }}
+          // style={{ width: 200, height: 200 }}
+        />
+      </View>
+      <View>
+        <Text className="text-white">Find a perfect job match</Text>
+      </View>
+      {/* <StatusBar /> */}
+    </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+// const styles = StyleSheet.create({
+//   container:{
+//     flex:1,
+//     alignItems: "center",
+//     justifyContent: "center"
+//   }
+// })
