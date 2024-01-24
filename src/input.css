@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+p {
+    line-height: 22.5px;
+    font-size: 15px;
+}
+
+hr {
+    border-top: 1px solid rgb(0 0 0 / 0.5);
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
