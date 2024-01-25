@@ -13,7 +13,7 @@ export default function App() {
         />
         <Text className="text-white">Find a perfect job match</Text>
       </View>
-      {/* <StatusBar /> */}
+      <StatusBar />
     </ScrollView>
   );
 }
