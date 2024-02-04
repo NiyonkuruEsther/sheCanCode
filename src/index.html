@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="./styles/output.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <header>
+      <div class="flex justify-between items-center bg-darkBlue h-full px-5">
+        <img src="images/to-do.png" alt="" srcset="" class="w-[8%]" />
+        <button
+          class="bg-orange rounded-xl text-xl py-2 px-4 w-40 h-2/3 text-white flex justify-between !items-center"
+        >
+          <span
+            class="text-black text-3xl font-extrabold flex flex-col h-full !items-start"
+            >+</span
+          >Add todo
+        </button>
+      </div>
+    </header>
   </body>
 </html>
