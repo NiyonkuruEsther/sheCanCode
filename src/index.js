@@ -50,14 +50,15 @@ const toggleTodoStatus = (task) => {
   rendertodoListData();
 };
 
-const updateTodo = (id, title) => {
+const updateTodo = (task, value) => {
   todos = todos.map((todo) => {
-    if (todo.id === id) {
-      return { ...todo, title: title };
+    if (todo.id === task.id) {
+      return { ...todo, value: value };
     }
     return todo;
   });
   localStorage.setItem("todos", JSON.stringify(todos));
+  rendertodoListData();
 };
 const addItem = document.getElementById("add-item");
 const newItemInput = document.getElementById("new-item-input");
@@ -65,7 +66,7 @@ addItem.addEventListener("click", () => {
   const inputValue = newItemInput.value.trim();
   if (inputValue) {
     addTodo({
-      id: todoList.length + 1,
+      id: todos.length + 1,
       value: inputValue,
       checked: false
     });
@@ -98,7 +99,7 @@ function rendertodoListData() {
     }`;
     todoText.contentEditable = true;
     todoText.addEventListener("change", function () {
-      editTodoText(item, todoText.textContent);
+      updateTodo(item, todoText.textContent);
     });
 
     let deleteButton = document.createElement("img");
@@ -122,4 +123,3 @@ function rendertodoListData() {
   });
 }
 rendertodoListData();
-console.log(localStorage.getItem("todoListData"), todoListData);
