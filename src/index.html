@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles/output.css" rel="stylesheet" />
+    <script src="./index.js" defer></script>
   </head>
   <body>
-    <header>
-      <div class="flex justify-between items-center bg-darkBlue h-full px-5">
-        <img src="images/to-do.png" alt="" srcset="" class="w-[8%]" />
+    <header class="bg-darkBlue w-screen">
+      <div
+        class="flex justify-between items-center h-full px-5 max-w-[1200px] mx-auto"
+      >
+        <a href="#home" class="w-[8%]">
+          <img src="images/to-do.png" alt="" srcset="" />
+        </a>
         <button>
           <a
-            href="#add-item"
-            class="bg-orange rounded-lg text-xl py-2 px-4 w-40 h-2/3 text-white flex items-center justify-center gap-3"
+            href="#add-item-section"
+            class="bg-orange rounded-lg text-xl py-2 px-4 w-40 h-14 text-white flex items-center justify-center gap-3 md:py-1 md:px-3 md:h-10 md:text-base md:w-32 sm:h-fit sm:py-2 sm:text-base sm:w-fit"
           >
             <img
               src="https://cdn-icons-png.flaticon.com/128/32/32563.png"
@@ -23,17 +28,37 @@
         </button>
       </div>
     </header>
-    <section class="max-w-[1200px] mx-auto py-10" id="add-item">
+
+    <section
+      class="max-w-[1200px] mx-auto py-10 flex gap-10"
+      id="add-item-section"
+    >
       <!-- new item input -->
-      <div class="w-full flex flex-col gap-3">
+      <div class="w-full flex flex-col gap-3 px-5">
         <h3 class="text-lg font-semibold">New item description</h3>
-        <div class="w-1/2 h-14 border border-darkBlue rounded-lg">
-          <input
-            type="text"
-            class="w-full h-full focus-within:outline-none focus-within:border-none bg-slate-100 rounded-lg px-3 font-medium"
-          />
+        <div class="grid gap-y-5 place-items-end md:flex md:gap-x-4">
+          <div
+            class="w-full h-14 border border-darkBlue rounded-lg flex-1 md:h-10"
+          >
+            <input
+              id="new-item-input"
+              type="text"
+              class="w-full h-full focus-within:outline-none focus-within:border-none bg-slate-100 rounded-lg px-3 font-medium"
+            />
+          </div>
+          <button
+            id="add-item"
+            class="bg-orange rounded-lg text-xl py-2 px-4 w-40 h-14 text-white text-center md:py-1 md:px-3 md:h-10 md:text-base md:w-32"
+          >
+            Add todo
+          </button>
         </div>
       </div>
     </section>
+
+    <section
+      id="home"
+      class="flex flex-col max-w-[1200px] mx-auto px-5 py-10"
+    ></section>
   </body>
 </html>
