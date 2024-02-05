@@ -18,67 +18,47 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const homeSection = document.getElementById("home");
-let todoListData = [];
 
-let todoList = JSON.parse(localStorage.getItem("todoListData")) || [];
-
-function saveTodoList(task) {
-  let existingTodoList = JSON.parse(localStorage.getItem("todoListData")) || [];
-  let newId =
-    existingTodoList.length > 0
-      ? existingTodoList[existingTodoList.length - 1].id + 1
-      : 0;
-
-  existingTodoList.push({
-    id: newId,
-    value: task.value,
-    checked: false
-  });
-
-  localStorage.setItem("todoListData", JSON.stringify(existingTodoList));
-}
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 const addTodo = (task) => {
-  console.log("yolls");
-  if (task.value.length) {
-    todoList.push(task);
-    saveTodoList(task);
-    rendertodoListData();
-  } else {
-    empty = true;
-  }
+  const newTodo = {
+    id: todos.length > 0 ? todos[todos.length - 1].id + 1 : 0,
+    value: task.value,
+    checked: false
+  };
+  todos.push(newTodo);
+  localStorage.setItem("todos", JSON.stringify(todos));
+  rendertodoListData();
 };
 
 const deleteTodo = (task) => {
-  console.log(task);
-  let newList = todoListData.filter((item) => item.id !== task.id);
-  localStorage.setItem("todoListData", JSON.stringify(newList));
+  todos = todos.filter((todo) => todo.id !== task.id);
+  localStorage.setItem("todos", JSON.stringify(todos));
   rendertodoListData();
 };
 
-const checkTodo = (task) => {
-  todoList = todoList.map((item) => {
-    console.log(task, item, "checked");
-
-    if (item.id === task.id) {
-      return { ...task, checked: !task.checked };
+const toggleTodoStatus = (task) => {
+  todos = todos.map((todo) => {
+    if (todo.id === task.id) {
+      return { ...todo, checked: !todo.checked };
     }
+    return todo;
   });
-  console.log(todoList.find((item) => item.id === 1), "item");
+
+  localStorage.setItem("todos", JSON.stringify(todos));
   rendertodoListData();
 };
 
-function editTodoText(taskId, newText) {
-  todoList = todoList.map((task) => {
-    if (task.id === taskId) {
-      return { ...task, value: newText };
-    } else {
-      return task;
+const updateTodo = (id, title) => {
+  todos = todos.map((todo) => {
+    if (todo.id === id) {
+      return { ...todo, title: title };
     }
+    return todo;
   });
-  rendertodoListData();
-}
-
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
 const addItem = document.getElementById("add-item");
 const newItemInput = document.getElementById("new-item-input");
 addItem.addEventListener("click", () => {
@@ -95,7 +75,7 @@ addItem.addEventListener("click", () => {
 
 function rendertodoListData() {
   homeSection.innerHTML = "";
-  todoList.forEach((item) => {
+  todos.forEach((item) => {
     let todoItem = document.createElement("div");
     todoItem.className =
       "flex gap-2 w-full bg-slate-100 px-6 items-center rounded-lg h-14 border border-darkBlue md:h-10 mb-4";
@@ -105,7 +85,7 @@ function rendertodoListData() {
     checkbox.className = "w-6 h-6  md:h-4 md:w-4";
     checkbox.checked = item.checked;
     checkbox.addEventListener("change", function () {
-      checkTodo(item);
+      toggleTodoStatus(item);
     });
 
     let todoActions = document.createElement("div");
