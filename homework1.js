@@ -20,7 +20,7 @@ const expensiveProduct = items.reduce((prev, current) =>
 console.log("Expensive Product:", expensiveProduct);
 
 // 3. Calculate the full price of all products combined
-const totalPrice = items.reduce((acc, item) => acc + item.price, 0);
+const totalPrice = items.reduce((a, b) => a + b.price, 0);
 console.log("Total Price of all products combined:", totalPrice);
 
 // 4. Calculate the full price of all products combined and remove products that are under $10
