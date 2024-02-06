@@ -8,7 +8,7 @@ const removetask = (index) => {
   return arr.splice(index, 1);
 };
 const sortTask = () => {
-  return arr.sort();
+  return arr.sort((a, b) => a.value.localeCompare(b.value));
 };
 
 const displayIncomplete = () => {
@@ -22,8 +22,10 @@ const markCompleted = (index) => {
 };
 addTask("eat");
 addTask("run");
-addTask("readh");
+addTask("zreadh");
+addTask("rea");
+addTask("reh");
 
 removetask(1);
 displayIncomplete();
-console.log(markCompleted(0));
+console.log(sortTask());
