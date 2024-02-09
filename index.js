@@ -12,6 +12,9 @@ const loadImage = async () => {
     imgElement.src = imgUrl;
     imgElement.style.width = "300px";
     imgElement.style.height = "300px";
+    imgElement.style.objectFit = "cover";
+    imgElement.style.objectPosition = "center";
+
     dogContainer.appendChild(imgElement);
   }
 };
