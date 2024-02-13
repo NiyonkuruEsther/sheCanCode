@@ -1,31 +1,40 @@
 import { StatusBar } from "expo-status-bar";
 import {
-  Button,
+  FlatList,
   SafeAreaView,
-  ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View
 } from "react-native";
 
 export default function App() {
+  const TodoList = [
+    { title: "Eat" },
+    { title: "take pills" },
+    { title: "Go for sports" }
+  ];
+
   return (
-    <ScrollView>
-      <SafeAreaView>
-        <View style={[styles.nav, styles.container]}>
-          <Text style={styles.navText}>Todo</Text>
-        </View>
-        <ScrollView style={styles.todoListItems}>
+    <SafeAreaView>
+      <View style={[styles.nav, styles.container]}>
+        <Text style={styles.navText}>Todo</Text>
+      </View>
+      <FlatList
+        data={TodoList}
+        renderItem={({ item }) => (
+          <TouchableOpacity style={styles.todoListItemContainer}>
+            <Text style={styles.todoListItem}>{item.title}</Text>
+          </TouchableOpacity>
+        )}
+        ListHeaderComponent={
           <Text style={styles.todoListTitle}>Todo list items</Text>
-          <View style={styles.todoListItemContainer}>
-            <Text style={styles.todoListItem}>
-              What is it like to live in this world!
-            </Text>
-          </View>
-        </ScrollView>
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    </ScrollView>
+        }
+        keyExtractor={(item, index) => index.toString()}
+        contentContainerStyle={styles.todoListItems}
+      />
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
 
@@ -45,8 +54,6 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   todoListItems: {
-    flex: 1,
-    // flexDirection: "column",
     padding: 20
   },
   todoListTitle: {
