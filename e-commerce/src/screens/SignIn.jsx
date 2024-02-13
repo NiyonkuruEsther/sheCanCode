@@ -71,7 +71,11 @@ const SignIn = () => {
             </View>
           </View>
           <View
-            style={{ flexDirection: "row", alignItems: "center", padding: 0 }}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              paddingTop: 5
+            }}
           >
             <CheckBox
               size={30}
