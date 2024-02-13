@@ -21,7 +21,9 @@ const SignIn = () => {
   return (
     <ScrollView contentContainerStyle={singIn.container}>
       <View>
-        <AntDesign name="close" size={30} style={{ fontFamily: "300" }} />
+        <TouchableOpacity>
+          <AntDesign name="close" size={30} style={{ fontFamily: "300" }} />
+        </TouchableOpacity>
 
         {/* intro */}
         <View style={singIn.intro}>
