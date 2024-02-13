@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import {
   FlatList,
-  SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -16,25 +16,28 @@ export default function App() {
   ];
 
   return (
-    <SafeAreaView>
+    <ScrollView style={{ flex: 1, height: "100%" }}>
       <View style={[styles.nav, styles.container]}>
         <Text style={styles.navText}>Todo</Text>
       </View>
-      <FlatList
-        data={TodoList}
-        renderItem={({ item }) => (
-          <TouchableOpacity style={styles.todoListItemContainer}>
-            <Text style={styles.todoListItem}>{item.title}</Text>
-          </TouchableOpacity>
-        )}
-        ListHeaderComponent={
-          <Text style={styles.todoListTitle}>Todo list items</Text>
-        }
-        keyExtractor={(item, index) => index.toString()}
-        contentContainerStyle={styles.todoListItems}
-      />
-      <StatusBar style="auto" />
-    </SafeAreaView>
+      <View>
+        <FlatList
+          data={TodoList}
+          renderItem={({ item }) => (
+            <TouchableOpacity style={styles.todoListItemContainer}>
+              <Text style={styles.todoListItem}>{item.title}</Text>
+            </TouchableOpacity>
+          )}
+          ListHeaderComponent={
+            <Text style={styles.todoListTitle}>Todo list items</Text>
+          }
+          keyExtractor={(item, index) => index.toString()}
+          contentContainerStyle={styles.todoListItems}
+        />
+      </View>
+
+      <StatusBar style="light" />
+    </ScrollView>
   );
 }
 
@@ -46,7 +49,8 @@ const styles = StyleSheet.create({
   },
   nav: {
     backgroundColor: "#FF5733",
-    height: 80
+    paddingTop: "7%",
+    height: "40%"
   },
   navText: {
     color: "white",
@@ -54,7 +58,8 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   todoListItems: {
-    padding: 20
+    padding: 20,
+    flex: 2
   },
   todoListTitle: {
     fontSize: 30,
