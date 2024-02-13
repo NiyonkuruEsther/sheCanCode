@@ -23,8 +23,9 @@ export default function App() {
       <View>
         <FlatList
           data={TodoList}
-          renderItem={({ item }) => (
+          renderItem={({ item, index }) => (
             <TouchableOpacity style={styles.todoListItemContainer}>
+              <Text style={styles.todoListItem}>{index + 1}</Text>
               <Text style={styles.todoListItem}>{item.title}</Text>
             </TouchableOpacity>
           )}
@@ -66,6 +67,7 @@ const styles = StyleSheet.create({
     paddingBottom: 20
   },
   todoListItemContainer: {
+    flexDirection: "row",
     borderRadius: 8,
     borderWidth: 2,
     borderStyle: "dashed",
