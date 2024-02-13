@@ -20,7 +20,7 @@ export const singIn = StyleSheet.create({
     fontSize: 17
   },
   form: {
-    rowGap: 25,
+    rowGap: 20,
     paddingTop: 50
   },
   formItem: {
@@ -37,7 +37,7 @@ export const singIn = StyleSheet.create({
     opacity: 1
   },
   footerFunctionalities: {
-    rowGap: 25,
+    rowGap: 20,
     alignItems: "center"
   },
   accountFunctionalisties: {

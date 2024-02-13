@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { singIn } from "../../styles/signIn";
 import AntDesign from "react-native-vector-icons/AntDesign";
+import Entypo from "react-native-vector-icons/Entypo";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { CheckBox } from "react-native-elements";
@@ -105,6 +107,61 @@ const SignIn = () => {
         <View style={singIn.accountFunctionalisties}>
           <Button title="Create account" />
           <Button title="Sign Up" color="orange" />
+        </View>
+      </View>
+
+      {/* Social media */}
+      <View
+        style={{
+          flexDirection: "row",
+          marginBottom: 20,
+          backgroundColor: "#F5FBFF",
+          padding: 12,
+          borderRadius: 100,
+          justifyContent: "space-around"
+        }}
+      >
+        <View
+          style={{
+            shadowRadius: 12,
+            padding: 5,
+            borderRadius: 30,
+            backgroundColor: "white",
+            width: 50,
+            height: 50,
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <Entypo name="facebook-with-circle" size={30} color="#007FFF" />
+        </View>
+        <View
+          style={{
+            shadowRadius: 12,
+            padding: 5,
+            borderRadius: 30,
+            backgroundColor: "white",
+            width: 50,
+            height: 50,
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <FontAwesome name="google" size={30} color="red" />
+        </View>
+        <View
+          style={{
+            shadowRadius: 12,
+            padding: 5,
+            borderRadius: 30,
+            backgroundColor: "white",
+            width: 50,
+            height: 50,
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <AntDesign name="apple1" size={30} />
         </View>
       </View>
     </ScrollView>
