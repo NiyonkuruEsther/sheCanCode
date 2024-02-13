@@ -4,7 +4,9 @@ export const singIn = StyleSheet.create({
   container: {
     height: "100%",
     paddingHorizontal: 20,
-    rowGap: 10
+    rowGap: 10,
+    justifyContent: "space-between",
+    paddingTop: 10
   },
   intro: {
     rowGap: 10
@@ -27,11 +29,20 @@ export const singIn = StyleSheet.create({
     columnGap: 20,
     borderRadius: 12,
     paddingHorizontal: 20,
+    overflow: "scroll",
     // opacity: 0.1,
     paddingVertical: 15
   },
   formInput: {
-    color: "white",
     opacity: 1
+  },
+  footerFunctionalities: {
+    rowGap: 25,
+    alignItems: "center"
+  },
+  accountFunctionalisties: {
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between"
   }
 });
