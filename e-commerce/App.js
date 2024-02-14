@@ -10,29 +10,10 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    // <SafeAreaView>
-    //   <SignIn />
-    //   <StatusBar style="auto" />
-    // </SafeAreaView>
-    <NavigationContainer>
-      <Stack.Navigator>
-        {/* <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{ title: "Home" }}
-        /> */}
-        <Stack.Screen
-          name="SigIn"
-          component={SignIn}
-          options={{ title: "SigIn" }}
-        />
-        <Stack.Screen
-          name="Billing and payment"
-          component={BillingAndPayment}
-          options={{ title: "Billing" }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <SafeAreaView>
+      <SignIn />
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
 

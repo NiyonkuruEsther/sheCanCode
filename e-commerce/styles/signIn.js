@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const singIn = StyleSheet.create({
+export const signIn = StyleSheet.create({
   container: {
     height: "100%",
     paddingHorizontal: 20,
@@ -17,10 +17,11 @@ export const singIn = StyleSheet.create({
     textAlign: "center"
   },
   text: {
-    fontSize: 17
+    fontSize: 17,
+    textAlign: "center"
   },
   form: {
-    rowGap: 20,
+    rowGap: 15,
     paddingTop: 50
   },
   formItem: {
@@ -37,7 +38,7 @@ export const singIn = StyleSheet.create({
     opacity: 1
   },
   footerFunctionalities: {
-    rowGap: 20,
+    rowGap: 15,
     alignItems: "center"
   },
   accountFunctionalisties: {

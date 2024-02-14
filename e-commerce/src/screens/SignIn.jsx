@@ -1,36 +1,29 @@
 import React, { useState } from "react";
-import {
-  Button,
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View
-} from "react-native";
-import { singIn } from "../../styles/signIn";
+import { Button, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import Entypo from "react-native-vector-icons/Entypo";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Fontisto from "react-native-vector-icons/Fontisto";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { CheckBox } from "react-native-elements";
+import { TextInput } from "react-native-paper";
+import { signIn } from "../../styles/signIn";
 
 const SignIn = () => {
   const [checked, setChecked] = useState(false);
 
   return (
-    <ScrollView contentContainerStyle={singIn.container}>
+    <ScrollView contentContainerStyle={signIn.container}>
       <View>
         <TouchableOpacity>
-          <AntDesign name="close" size={30} style={{ fontFamily: "300" }} />
+          <AntDesign name="close" size={20} style={{ fontFamily: "300" }} />
         </TouchableOpacity>
 
         {/* intro */}
-        <View style={singIn.intro}>
+        <View style={signIn.intro}>
           <View>
-            <Text style={singIn.heading}>Sign In</Text>
+            <Text style={signIn.heading}>Sign In</Text>
           </View>
-          <Text style={singIn.text}>
+          <Text style={signIn.text}>
             Welcome back! Please enter your details
           </Text>
         </View>
@@ -38,41 +31,54 @@ const SignIn = () => {
         {/* form */}
 
         <View>
-          <View style={singIn.form}>
+          <View style={signIn.form}>
             {/* Input one */}
-            <View style={singIn.formItem}>
-              <View
-                style={{
-                  backgroundColor: "#F7EFFD",
-                  borderRadius: 30,
-                  padding: 10
-                }}
-              >
-                <Fontisto name="email" size={20} color="purple" />
-              </View>
-              <TextInput
-                placeholder="Enter your email"
-                style={singIn.formInput}
-                placeholderTextColor="black"
-              />
-            </View>
+            <TextInput
+              label="Email"
+              mode="flat"
+              left={
+                <TextInput.Icon
+                  icon="email-outline"
+                  size={20}
+                  style={{
+                    borderRadius: 30,
+                    backgroundColor: "#F7EFFD",
+                    padding: 5,
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
+                  color="purple"
+                />
+              }
+              theme={{
+                roundness: 12,
+                colors: { primary: "#007FFF", background: "#F7EFFD" }
+              }}
+            />
             {/* input two */}
-            <View style={singIn.formItem}>
-              <View
-                style={{
-                  backgroundColor: "#E3F4FF",
-                  borderRadius: 30,
-                  padding: 10
-                }}
-              >
-                <MaterialIcons name="password" size={20} color="#007FFF" />
-              </View>
-              <TextInput
-                placeholder="Enter your password"
-                style={singIn.formInput}
-                placeholderTextColor="black"
-              />
-            </View>
+            <TextInput
+              label="Password"
+              mode="flat"
+              secureTextEntry
+              left={
+                <TextInput.Icon
+                  icon="lock-outline"
+                  size={20}
+                  style={{
+                    borderRadius: 30,
+                    backgroundColor: "#E3F4FF",
+                    padding: 5,
+                    alignItems: "center",
+                    justifyContent: "center"
+                  }}
+                  color="#007FFF"
+                />
+              }
+              theme={{
+                roundness: 12,
+                colors: { primary: "#007FFF", background: "#F5FBFF" }
+              }}
+            />
           </View>
           <View
             style={{
@@ -82,17 +88,17 @@ const SignIn = () => {
             }}
           >
             <CheckBox
-              size={30}
+              size={20}
               checked={checked}
               onPress={() => setChecked(!checked)}
             />
-            <Text>Remeber me</Text>
+            <Text>Remember me</Text>
           </View>
         </View>
       </View>
 
       {/* footer functions */}
-      <View style={singIn.footerFunctionalities}>
+      <View style={signIn.footerFunctionalities}>
         <Button title="Forgot Password" />
         <TouchableOpacity
           style={{
@@ -106,7 +112,7 @@ const SignIn = () => {
             Sign In
           </Text>
         </TouchableOpacity>
-        <View style={singIn.accountFunctionalisties}>
+        <View style={signIn.accountFunctionalisties}>
           <Button title="Create account" />
           <Button title="Sign Up" color="orange" />
         </View>
@@ -135,7 +141,7 @@ const SignIn = () => {
             justifyContent: "center"
           }}
         >
-          <Entypo name="facebook-with-circle" size={30} color="#007FFF" />
+          <Entypo name="facebook-with-circle" size={20} color="#007FFF" />
         </View>
         <View
           style={{
@@ -149,7 +155,7 @@ const SignIn = () => {
             justifyContent: "center"
           }}
         >
-          <FontAwesome name="google" size={30} color="red" />
+          <FontAwesome name="google" size={20} color="red" />
         </View>
         <View
           style={{
@@ -163,7 +169,7 @@ const SignIn = () => {
             justifyContent: "center"
           }}
         >
-          <AntDesign name="apple1" size={30} />
+          <AntDesign name="apple1" size={20} />
         </View>
       </View>
     </ScrollView>
