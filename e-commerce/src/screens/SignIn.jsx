@@ -36,6 +36,7 @@ const SignIn = () => {
             <TextInput
               label="Email"
               mode="flat"
+              style={{ backgroundColor: "ghostwhite" }}
               left={
                 <TextInput.Icon
                   icon="email-outline"
@@ -59,6 +60,7 @@ const SignIn = () => {
             <TextInput
               label="Password"
               mode="flat"
+              style={{ backgroundColor: "ghostwhite" }}
               secureTextEntry
               left={
                 <TextInput.Icon
