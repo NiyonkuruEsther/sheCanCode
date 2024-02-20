@@ -6,7 +6,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { CheckBox } from "react-native-elements";
 import { TextInput } from "react-native-paper";
-import { signIn } from "../../styles/signIn";
+import { signIn } from "../styles/signIn";
 
 const SignIn = () => {
   const [checked, setChecked] = useState(false);
